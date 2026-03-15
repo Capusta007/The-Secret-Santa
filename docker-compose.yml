@@ -1,0 +1,17 @@
+services:
+  api-gateway:
+    container_name: api-gateway
+    build:
+      context: .
+      dockerfile: api-gateway/Dockerfile
+    image: api-gateway
+    ports:
+      - "8080:8080"
+    networks:
+      - network
+
+
+
+networks:
+  network:
+    driver: bridge
